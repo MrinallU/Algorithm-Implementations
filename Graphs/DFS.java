@@ -4,7 +4,8 @@
   
 import java.util.*; 
 class Graph{
-  private int V; 
+  private int V;
+     
   private ArrayList<ArrayList<Integer> > adj; 
     Graph(int V){
       this.V = V; 
