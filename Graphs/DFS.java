@@ -2,7 +2,9 @@
 // Java code to demonstrate Graph representation 
 // using ArrayList in Java 
   
-import java.util.*; 
+import java.util.*;
+
+import javax.net.ssl.SSLPeerUnverifiedException; 
 class Graph{
   private int V;
      
@@ -77,7 +79,6 @@ class DFS{
         g.addEdge(3, 3); 
 
         g.addEdge(6, 7); // A set of two edges that are only connected to each other
-
-        g.DFS(7); 
+	g.DFS(3);	
     } 
 } 
