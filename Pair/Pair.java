@@ -1,4 +1,4 @@
-public class Pair {
+public static class pair {
 
     private final int x;
     private final int y;
