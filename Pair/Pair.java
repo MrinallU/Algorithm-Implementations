@@ -3,7 +3,7 @@ public static class pair {
     private final int x;
     private final int y;
 
-    public Pair(final int x, final int y) {
+    public pair(final int x, final int y) {
         this.x = x;
         this.y = y;
     }
