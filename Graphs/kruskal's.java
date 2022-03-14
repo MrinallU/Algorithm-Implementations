@@ -2,46 +2,23 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	static Kattio io;
-	static {
-		try {
-			io = new Kattio("superbull");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	static int n, comp;
 	static DisjointSets DSU;
 	static long ans;
 	static long [] arr;
 	static PriorityQueue<pair> pq = new PriorityQueue<>();
 	public static void main(String[] args) {
-		n  = comp = io.nextInt();
-		arr = new long[n];
-		DSU = new DisjointSets(n);
-		for (int i = 0; i < n; i++) {
-			arr[i] = io.nextInt();
-		}
-
-		for (int i = 0; i < n; i++) {
-			for (int j = i+1; j < n; j++) {
-				pq.add(new pair(i, j, arr[i]^arr[j])); // add the feasible edges.
-			}
-		}
 		kruskal();
-		io.println(ans);
-		io.close();
 	}
 
-	public static void kruskal() {
+	public static long kruskal() {
 		while (!pq.isEmpty()) {
 			pair e = pq.poll();
 			if (DSU.find(e.x) != DSU.find(e.y)) {
 				DSU.union(e.x, e.y);
 				ans += e.w;
 				if(comp == 1)
-					return; // terminate when a tree is created to avoid TLE and bc optimal answer is found.
+					return ans; // terminate when a tree is created to avoid TLE and bc optimal answer is found.
 			}
 		}
 	}
